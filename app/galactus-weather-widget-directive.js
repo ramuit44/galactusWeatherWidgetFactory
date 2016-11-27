@@ -21,7 +21,7 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
         var location = ''+locationObj.coords.latitude.toFixed(0)+locationObj.coords.longitude.toFixed(0);
 
         
-        $http.get('https://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat='+locationObj.coords.latitude+'&lon='+locationObj.coords.longitude+'&units='+units+'&cnt=5').then(function(response) {
+        $http.get('http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat='+locationObj.coords.latitude+'&lon='+locationObj.coords.longitude+'&units='+units+'&cnt=5').then(function(response) {
             defer.resolve(response.data);
         }, function(response) {
             defer.reject(response);
@@ -92,7 +92,6 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
                 options);
 
             $timeout(function() {
-                    alert('Geo Location timed out');
                     deferred.reject('Geo Location timed out');
 
                 }, 10000)
