@@ -90,6 +90,12 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
                     deferred.reject(err);
                 },
                 options);
+
+            $timeout(function() {
+                    alert('Geo Location timed out');
+                    deferred.reject('Geo Location timed out');
+
+                }, 6000)
         }
 
         return deferred.promise;
