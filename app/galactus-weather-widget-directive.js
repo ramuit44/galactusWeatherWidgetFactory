@@ -2,7 +2,7 @@
 
 var weatherWidgetModule = angular.module('weatherWidgetModule', []);
 
-weatherWidgetModule.service('weatherService', function($http, $filter, $window, $q) {
+weatherWidgetModule.service('weatherService', function($http, $filter, $window, $q, $timeout) {
     var service = {
       curWeather: {},
      
