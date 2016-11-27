@@ -1,0 +1,82 @@
+<div class="row weather-widget">
+
+  
+  <!--<div class="col-xs-12">
+    
+    <weather-icon-google
+      cloudiness="{{ weather.clouds }}"
+      custom-size="customSize"
+      ng-if="useGoogleImages">
+    </weather-icon-google>
+
+    <weather-icon
+      cloudiness="{{ weather.clouds }}"
+      custom-size="customSize"
+      ng-if="!useGoogleImages">
+    </weather-icon>
+    
+    <span style="display:inline-block; vertical-align:middle">
+      <h3 ng-show="weather.temp.current">
+        Current: <span ng-bind-html="weather.temp.current | temparature:1:units"></span>
+      </h3>
+      
+      min: <span ng-bind-html="weather.temp.min | temparature:1:units"></span><br/>
+      max: <span ng-bind-html="weather.temp.max | temparature:1:units"></span><br/>
+
+      <span ng-show="weather.rain">
+        <h6>
+          {{weather.rain}}% Chance of rain
+        </h6>
+      </span>
+
+      <span ng-hide="weather.rain">
+        <h6>
+          No rain expected.
+        </h6>
+      </span>
+    </span>
+  </div> -->
+
+
+
+ <div class="col-xs-12"><h4><b>{{title}}</b></h4></div>
+  <div class="container col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="panel-title header">
+                  <div class="row">
+                    <div class="col-xs-5">{{weather.locationname}}, {{weather.countryCode}}</div>
+                    <div class="col-xs-6"><span>{{weather.timestamp}}</span></div>
+                     <div class="col-xs-1 metric">
+                          <i ng-class="(units=='metric') ? 'wi wi-celsius' : 'wi wi-fahrenheit'"></i>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body pull-center body day">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <weather-icon cloudiness="{{ weather.clouds }}" custom-size="33" >
+                    </weather-icon>
+                  </div>
+                  <div class="col-xs-4"><span class="align-left tempContent"><span ng-bind-html="weather.temp.current | temparature:1:units"></span></span></div>
+                  <div class="col-xs-4" ng-if="showwind"><span class="align-left windContent">{{weather.windSpeed}} 
+                  <span ng-if="(units=='metric')">km/h</span><span ng-if="(units=='imperial')">mph</span>
+                  </span></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4"><span class="align-left subContent"><span ng-bind-html="weather.temp.max | temparature:1:units"></span>/<span ng-bind-html="weather.temp.min | temparature:1:units"></span></span></div>
+                  <div class="col-xs-4"><span class="align-left subContent">Humidity {{weather.humidity}}%</span></div>
+                  <div class="col-xs-4" ng-if="showwind">
+                      
+                      <wind-icon angle="{{ weather.windDeg }}" custom-size="20" > </weather-icon>
+                  </div>
+                 </div>
+              </div>
+            </div>
+  </div>
+  
+
+
+
+</div>
