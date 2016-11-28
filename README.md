@@ -17,4 +17,5 @@ Editor Factory to create configurable weather widgets. Each Weather widget is bu
   * This project's tests code coverage is in coverage directory.
   * This project's tests result report (grunt-junit-report) is in ./test-results.xml.
 * This project's jshint configuration is in ./.jshintrc and jshint report is in ./jshint-report .  
+* This project deleiverables are in dist directory.
 
