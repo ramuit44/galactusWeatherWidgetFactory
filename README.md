@@ -47,19 +47,18 @@ Run `grunt` to prepare your web assets in the `dist` directory.  The default tak
 Note: You need to have your backend server running.
 
 To run the app:
-
-`grunt serve`
+`grunt run`
 
 It will:
 
- - build your sass assets,
- - run a server to serve your web app static assets on port 9000, with a reverse proxy to your backend server on port
-  8000, a file watching mechanism to rebuild your sass assets, and live reload support so that your browser is
-  refreshed whenever you make changes to your sources
+ * build your assets.
+ * run a server to serve your web app static assets on port 9005.
+ * have a file watching mechanism to rebuild your assets.
+ * live reload support so that your browser is refreshed whenever you make changes to your sources.
 
 ### Testing
 
-Run `grunt test` to run karma tests.
+Run `grunt runtests` to run karma tests.
 
 
  
