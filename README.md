@@ -67,5 +67,5 @@ After the server is running you can use below URL's for testing
 
 
 ## Solution Description
-* Since there wasn't much scope for the styling as part to the exercise, I haven't used any OOCSS styling principles with CSS Preprocessors like SAAS (Let me know if you require that :)) and css in the APP is plain simple css. 
+* Since there wasn't much styling, I haven't used any OOCSS styling principles with CSS Preprocessors like SAAS (Let me know if you require that :)) and css in the APP is plain simple css. 
  
