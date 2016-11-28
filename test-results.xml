@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 54.0.2840 (Windows 8.1)" package="" timestamp="2016-11-28T11:56:28" id="0" hostname="AUSMEL129867L" tests="9" errors="0" failures="0" time="0.108">
+  <testsuite name="Safari 10.0.1 (Mac OS X 10.10.5)" package="" timestamp="2016-11-28T14:55:44" id="0" hostname="neodatas-MBP" tests="9" errors="0" failures="0" time="0.093">
     <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"/>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14"/>
     </properties>
-    <testcase name="test weatherService.getWeather for a given lat and long " time="0.031" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test weatherService.populateModalObjectFromResponse for weather reponse Object " time="0.006" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test currentWeather directive " time="0.037" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test weatherWidgetEditorOutput directive " time="0.02" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test Widget editor controller reset " time="0.002" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test Widget editor controller save " time="0.003" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test Widget editor controller duplicate " time="0.003" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test temparature filter " time="0.003" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
-    <testcase name="test getCurrentPosition positive" time="0.003" classname="Chrome 54.0.2840 (Windows 8.1).Service : WeatherService"/>
+    <testcase name="test weatherService.getWeather for a given lat and long " time="0.031" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test weatherService.populateModalObjectFromResponse for weather reponse Object " time="0.004" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test currentWeather directive " time="0.031" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test weatherWidgetEditorOutput directive " time="0.017" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test Widget editor controller reset " time="0.002" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test Widget editor controller save " time="0.002" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test Widget editor controller duplicate " time="0.002" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test temparature filter " time="0.002" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
+    <testcase name="test getCurrentPosition positive" time="0.002" classname="Safari 10.0.1 (Mac OS X 10.10.5).Service : WeatherService"/>
     <system-out><![CDATA[
 ]]></system-out>
     <system-err/>

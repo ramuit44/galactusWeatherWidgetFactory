@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/galactus-weather-widget-directive.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">app/</a> galactus-weather-widget-directive.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>62/69</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>62/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+&nbsp;
+var weatherWidgetModule = angular.module('weatherWidgetModule', ["ngSanitize"]);
+&nbsp;
+weatherWidgetModule.service('weatherService', ["$http", "$filter", "$window", "$q", "$timeout", function($http, $filter, $window, $q, $timeout) {
+  "use strict";
+    var service = {
+      curWeather: {},
+     
+      
+      
+      getWeather: function(units, displayWind, locationObj) {
+&nbsp;
+        var defer = $q.defer();
+&nbsp;
+        var defaultCordinates = {
+          latitude:33,
+          longitude:151
+        };
+&nbsp;
+        locationObj = locationObj || <span class="branch-1 cbranch-no" title="branch not covered" >{coords:defaultCordinates};</span>
+        
+        var location = ''+locationObj.coords.latitude.toFixed(0)+locationObj.coords.longitude.toFixed(0);
+&nbsp;
+        
+        $http.get('http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&amp;lat='+locationObj.coords.latitude+'&amp;lon='+locationObj.coords.longitude+'&amp;units='+units+'&amp;cnt=5').then(function(response) {
+            defer.resolve(response.data);
+        }, <span class="fstat-no" title="function not covered" >function(response) {</span>
+<span class="cstat-no" title="statement not covered" >            defer.reject(response);</span>
+        });
+&nbsp;
+        return defer.promise;
+      },
+&nbsp;
+&nbsp;
+      populateModalObjectFromResponse : function(data,title){
+&nbsp;
+        var location = title;
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(service.curWeather[location])
+<span class="cstat-no" title="statement not covered" >          return service.curWeather[location];</span>
+        
+        service.curWeather[location] = { temp: {}, clouds: null };
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (data) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (data.main) {
+                    service.curWeather[location].temp.current = data.main.temp;
+                    service.curWeather[location].temp.min = data.main.temp_min;
+                    service.curWeather[location].temp.max = data.main.temp_max;
+                    service.curWeather[location].humidity = data.main.humidity;
+                }
+                <span class="missing-if-branch" title="else path not taken" >E</span>if(data.sys){
+                    service.curWeather[location].countryCode = data.sys.country;
+                }
+&nbsp;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if(data.wind){
+                   service.curWeather[location].windSpeed = data.wind.speed;
+                   service.curWeather[location].windDeg = data.wind.deg;
+                }
+&nbsp;
+                service.curWeather[location].locationname = data.name;
+                service.curWeather[location].clouds = data.clouds ? data.clouds.all : <span class="branch-1 cbranch-no" title="branch not covered" >undefined;</span>
+                service.curWeather[location].timestamp = $filter('date')(new Date(), 'dd,MMM yy hh:mm a');
+            }
+&nbsp;
+              return service.curWeather[location];
+&nbsp;
+      },
+&nbsp;
+&nbsp;
+      getCurrentPosition: function() {
+        var deferred = $q.defer();
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!$window.navigator.geolocation) {
+<span class="cstat-no" title="statement not covered" >            deferred.reject('Geolocation not supported.');</span>
+        } else {
+&nbsp;
+            var options = {
+                            enableHighAccuracy: true,
+                            timeout: 5000,
+                            maximumAge: 0       
+            };
+&nbsp;
+            /*var options = {
+                          maximumAge:Infinity, timeout:0
+            }*/
+&nbsp;
+            $window.navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    deferred.resolve(position);
+                },
+<span class="fstat-no" title="function not covered" >                function (err) {</span>
+<span class="cstat-no" title="statement not covered" >                    deferred.reject(err);</span>
+                },
+                options);
+&nbsp;
+            $timeout(<span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                    deferred.reject('Geo Location timed out');</span>
+&nbsp;
+                }, 10000);
+        }
+&nbsp;
+        return deferred.promise;
+      }
+&nbsp;
+&nbsp;
+    };
+    return service;
+}]);
+&nbsp;
+weatherWidgetModule.filter('temparature', ["$filter", function($filter) {
+  return function(input, precision) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!precision) {
+<span class="cstat-no" title="statement not covered" >        precision = 1;</span>
+    }
+&nbsp;
+    /*var unitDisplay;
+&nbsp;
+    switch (units){
+      case "imperial":
+        unitDisplay = "F"
+        break;
+      case "metric":
+        unitDisplay = "C"
+        break;
+      default:
+        unitDisplay = "F"
+        break;
+    } */
+&nbsp;
+    var numberFilter = $filter('number');
+    //return numberFilter(input, precision) + '&amp;deg;' + unitDisplay;
+    return numberFilter(input, precision) + '&amp;deg;' ;
+  };
+}]);
+&nbsp;
+&nbsp;
+weatherWidgetModule.directive('currentWeather', ["weatherService", "$compile", function(weatherService,$compile){
+  return {
+    restrict:'E',
+    scope: {
+      units: '@?',
+      title: '@',
+      showwind: '@?'
+    },
+    templateUrl:'templates/weatherWidgetDisplay.html',
+    link: function(scope, iElem, iAttr){
+      scope.units = scope.units;  
+      scope.showwind = scope.showwind || <span class="branch-1 cbranch-no" title="branch not covered" >true;</span>
+      scope.title =    scope.title || <span class="branch-1 cbranch-no" title="branch not covered" >"Sample Date Widget" </span>;
+      scope.weather = {};
+      
+      var weatherPromise = weatherService.getCurrentPosition().then(weatherService.getWeather.bind(null,scope.units,scope.showwind));
+      weatherPromise.then(function(result){
+        scope.weather = weatherService.populateModalObjectFromResponse(result,scope.title);
+       
+      });
+ 
+    }
+  };
+}]);
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+weatherWidgetModule.directive('weatherIcon', function() {
+    return {
+        restrict: 'E', replace: true,
+        scope: {
+            cloudiness: '@',
+            customSize:'=',
+            useGoogleImages:'='
+        },
+        link: function(scope){
+            scope.getIconClass = function() {
+                if (scope.cloudiness &lt; 20) {
+                    return 'wi wi-day-sunny';
+                } else <span class="missing-if-branch" title="else path not taken" >E</span>if (scope.cloudiness &lt; 90) {
+                   return 'wi wi-day-cloudy';
+                } else {
+<span class="cstat-no" title="statement not covered" >                    return 'wi wi-cloudy';</span>
+                }
+            };
+        },
+        template: '&lt;i style=\'font-size:{{customSize}}px;\' ng-class=\'getIconClass()\'&gt;&lt;/i&gt;'
+    };
+});
+&nbsp;
+weatherWidgetModule.directive('windIcon', function() {
+    return {
+        restrict: 'E', replace: true,
+        scope: {
+            angle: '@',
+            customSize:'=',
+            
+        },
+        link: function(scope){
+            scope.getWindIconClass = function() {
+                if (scope.angle) {
+                   return "wi wi-wind towards-"+scope.angle+"-deg";
+                }
+            };
+        },
+        template: '&lt;i style=\'font-size:{{customSize}}px;\' ng-class=\'getWindIconClass()\'&gt;&lt;/i&gt;'
+    };
+});
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 29 2016 01:55:44 GMT+1100 (AEDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
