@@ -66,6 +66,23 @@ After the server is running you can use below URL's for testing
  * For testing the Sample Weather Widget page -[http://localhost:9005/sample.html](http://localhost:9005/sample.html)
 
 
+## Usage
+```html
+<head>
+...
+<link rel="stylesheet" type="text/css" href="styles/galactus-weather-widget.min.css"/>
+<script type="text/javascript" src="galactus-weather-widget-directive.min.js"></script>
+...
+</head>
+<body ng-app="weatherWidgetModule">
+<h4>Sample Usage of Weather widget component</h4>
+  <current-weather units="imperial"
+              showwind="true"
+              title="A sample Weather widget">
+    </current-weather>
+</body>      
+```
+
 ## Solution Description
 * Since there wasn't much styling, I haven't used any OOCSS styling principles with CSS Preprocessors like SAAS (Let me know if you require that :) - can do that as well) and css in the APP is plain simple css. 
  
