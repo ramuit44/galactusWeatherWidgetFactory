@@ -4,7 +4,7 @@
   "authors": [
     "Sriram P aka Galactus"
   ],
-  "description": "Editor Factory to create weather widgets. Each Weather widget is built using angular directives, feeded using OpenWeatherMap API and styled uising weather-icons.",
+  "description": "Editor Factory to create weather widgets.",
   "main": "weatherDirective.js",
   "keywords": [
     "angular",
@@ -22,12 +22,13 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.17",
+    "angular": "~1.2.32",
     "weather-icons": "~2.0.0"
   },
   "devDependencies": {
     "moment": "~2.6.0",
-    "angular-sanitize": "~1.2.17",
-    "bootstrap": "~3.1.1"
+    "angular-sanitize": "~1.2.32",
+    "bootstrap": "~3.1.1",
+    "angular-mocks": "1.2.32"
   }
 }
