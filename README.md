@@ -8,3 +8,10 @@ Editor Factory to create configurable weather widgets. Each Weather widget is bu
 * Bower - package manager for the solution , resolving any required library dependencies.
 * Grunt - Task runner tool for building the project and running app on static server and tests on Karma.
 
+## Code organization
+* This project sources are located in the app directory.
+  * The required libraries are located in the app/bower_components directory.
+  * The widget component html templates are located in the app/templates directory .
+  * The widget component styles are located in the app/styles directory.
+
+
