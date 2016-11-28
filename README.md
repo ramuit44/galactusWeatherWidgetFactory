@@ -65,4 +65,7 @@ After the server is running you can use below URL's for testing
  * For testing the Weather Widget Editor page - [http://localhost:9005/](http://localhost:9005/)
  * For testing the Sample Weather Widget page -[http://localhost:9005/sample.html](http://localhost:9005/sample.html)
 
+
+## Solution Description
+* Since there wasn't much scope for the styling as part to the exercise, I haven't used any OOCSS styling using any CSS Preprocessors like SAAS and it's plain simple css.
  
