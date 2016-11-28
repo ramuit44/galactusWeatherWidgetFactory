@@ -4,9 +4,9 @@
   *
   * Description
   */
- var app = angular.module('galactusWeatherApp', ["weatherWidgetModule", "ngSanitize"]);
+ var galactusWeatherApp = angular.module('galactusWeatherApp', ["weatherWidgetModule", "ngSanitize"]);
 
- app.controller('weatherWidgetEditorCtrl', ['$scope', function($scope) {
+ galactusWeatherApp.controller('weatherWidgetEditorCtrl', ['$scope', function($scope) {
 
  	$scope.submitted = false;
 
@@ -23,7 +23,7 @@
 
  			$scope.widgetConfigs.push(angular.copy($scope.widgetForm));
 			$scope.reset();
-  		}
+  		};
 
  		$scope.reset = function(){
  			$scope.submitted = false;

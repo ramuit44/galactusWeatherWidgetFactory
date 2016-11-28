@@ -1,23 +1,13 @@
-'use strict';
 
 describe('Service : WeatherService', function () {
 
-  var weatherService, $httpBackend;
+  var weatherService, $httpBackend, $q, $scope, $window, $compile, $geolocation, $controller1;
 
   // load the controller's module
-  beforeEach(module('myApp'));
-
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function (_weatherService_, _$httpBackend_) {
-    weatherService = _weatherService_;
-    $httpBackend = _$httpBackend_;
-  }));
-
-  it('it should request some data for Chicago, IL', function () {
+  beforeEach(module('galactusWeatherApp','test-templates'));
 
 
-    $httpBackend.whenGET('http://api.openweathermap.org/data/2.5/weather?q=Chicago, IL&units=imperial&cnt=5').respond(
-      {
+  var mockWeatherObject = {
         'coord': {
           'lon':-87.63,
           'lat':41.88
@@ -60,16 +50,99 @@ describe('Service : WeatherService', function () {
         'id':0,
         'name':'Chicago',
         'cod':200
-      }
+      };
+
+    var mockLocationObject = {};
+    var defaultCordinates = {
+          latitude:33,
+          longitude:151
+    };
+    mockLocationObject.coords = defaultCordinates;
+
+
+
+
+
+
+  // Initialize the controller and a mock scope
+  beforeEach(inject(function (_weatherService_, _$httpBackend_,_$q_,_$rootScope_,_$window_,_$compile_,_$controller_) {
+    weatherService = _weatherService_;
+    $httpBackend = _$httpBackend_;
+    $q = _$q_;
+    $scope = _$rootScope_.$new();
+    $window = _$window_;
+    $geoLocation = $window.navigator.geolocation;
+    $compile = _$compile_;
+    $controller1 = _$controller_;
+   
+  }));
+
+  afterEach(function() {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+    });
+
+
+  
+
+
+  it('test weatherService.getWeather for a given lat and long ', function () {
+
+    $httpBackend.whenGET('http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat=33&lon=151&units=imperial&cnt=5').respond(
+      mockWeatherObject
     );
 
-
-    weatherService.getWeather('Chicago, IL').then(function(weatherData)
+    weatherService.getWeather('imperial','true',mockLocationObject).then(function(weatherData)
     {
-      expect(weatherData.temp.current).toBe(81.88);
+      expect(weatherData.main.temp).toBe(81.88);
     });
 
     $httpBackend.flush();
 
   });
+
+
+  it('test weatherService.populateModalObjectFromResponse for weather reponse Object ', function () {
+
+    var appWeatherObj = weatherService.populateModalObjectFromResponse(mockWeatherObject,'some');
+    expect(appWeatherObj.temp.current ).toBe(81.88);
+
+  });
+
+
+  it('test currentWeather directive ', function () {
+
+     
+       var html = '<current-weather  units="imperial"  showwind="true" title="rams"> </current-weather>';
+       deferred1= $q.defer();
+       spyOn(weatherService, 'getCurrentPosition').andReturn(deferred1.promise);
+       deferred1.resolve(mockLocationObject);
+       $scope.$apply();
+
+       $httpBackend.whenGET('http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat=33&lon=151&units=imperial&cnt=5').respond(
+        mockWeatherObject
+        );
+
+       var element = $compile(html)($scope);
+        $scope.$digest();
+        console.log(element.isolateScope());
+       
+        $httpBackend.flush();
+
+  });
+
+
+   it('test Widget editor controller ', function () {
+
+    var $scope = {};
+    var controller = $controller1('weatherWidgetEditorCtrl', { $scope: $scope });
+    $scope.widgetForm = {
+    };
+    $scope.reset();
+    expect($scope.submitted).toBe(false);
+  });
+
+
+
+  
 });

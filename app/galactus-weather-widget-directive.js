@@ -7,13 +7,14 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
       curWeather: {},
      
       
+      
       getWeather: function(units, displayWind, locationObj) {
 
         var defer = $q.defer();
 
         var defaultCordinates = {
-          latitude:-33.8268051,
-          longitude:151.0854187
+          latitude:33,
+          longitude:151
         };
 
         locationObj = locationObj || {coords:defaultCordinates};
@@ -82,7 +83,7 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
                           maximumAge:Infinity, timeout:0
             }*/
 
-            $window.navigator.geolocation.getCurrentPosition(
+            navigator.geolocation.getCurrentPosition(
                 function (position) {
                     deferred.resolve(position);
                 },

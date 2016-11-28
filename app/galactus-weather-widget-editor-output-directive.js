@@ -1,4 +1,4 @@
-app.directive('weatherWidgetEditorOutput', function(){
+galactusWeatherApp.directive('weatherWidgetEditorOutput', function(){
   return {
     restrict:'E',
     scope: {

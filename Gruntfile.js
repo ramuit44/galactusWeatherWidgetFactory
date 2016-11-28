@@ -159,10 +159,22 @@ module.exports = function(grunt) {
           expand:true
         }]
       }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+       
+      }
     }
   });
 
   grunt.registerTask('test', ['jshint']);
+
+  grunt.registerTask('runtests', [
+    'clean:server',
+    'concurrent:test',
+    'karma'
+  ]);
 
   grunt.registerTask('run', function (target) {
     if (target === 'dist') {
@@ -177,6 +189,10 @@ module.exports = function(grunt) {
       'connect:livereload',
       'watch'
     ]);
+
+
+
+
   });
 
   grunt.registerTask('default', ['jshint', 'html2js', 'concat', 'ngAnnotate:dist', 'uglify', 'copy']);

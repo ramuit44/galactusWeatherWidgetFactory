@@ -4,29 +4,28 @@
 module.exports = function(config) {
   config.set({
     // base path, that will be used to resolve files and exclude
-    basePath: '',
+    basePath: 'app/',
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
-      "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js",
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-cookies/angular-cookies.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-
-      'vendor/**/*.js',
-
-      'src/*.js',
-      'app/*.js',
+     
+      {pattern: 'bower_components/angular/angular.js', included: true},
+      {pattern: 'bower_components/angular-mocks/angular-mocks.js', included: true},
+      {pattern: 'bower_components/jquery/dist/jquery.min.js', included: true},
+      {pattern: 'bower_components/angular-sanitize/angular-sanitize.js', included: true},
+      {pattern: 'bower_components/moment/moment.js', included: true},
       
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'galactus-weather-widget-directive.js',
+      'app.js',
+      'galactus-weather-widget-editor-output-directive.js',
+
+      
+      '../test/mock/**/*.js',
+      '../test/spec/**/*.js',
+      'templates/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -35,7 +34,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-       'app/*.js': ['coverage'],
+       '*.js': ['coverage'],
+        "templates/*.html": "ng-html2js"
     },
 
     // web server port
@@ -49,6 +49,14 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
 
+    ngHtml2JsPreprocessor: {
+        //
+        // Make up a module name to contain your templates.
+        // We will use this name in the jasmine test code.
+        // For advanced configs, see https://github.com/karma-runner/karma-ng-html2js-preprocessor
+        moduleName: 'test-templates',
+    },
+
 
     // Start these browsers, currently available:
     // - Chrome
@@ -58,15 +66,20 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
+    singleRun: false,
+
+    //browsers: ['Chrome'],
+    //singleRun: false,
+
 
     //'progress','html', 'coverage'
     //'dots', 'junit'
-    reporters: ['progress','html', 'coverage'],
+    reporters: ['progress','junit', 'coverage'],
     
-    /*junitReporter: {
-      outputFile: 'test-results.xml'
-    },*/
+    junitReporter: {
+      outputFile: '../test-results.xml'
+    },
 
      // enable / disable colors in the output (reporters and logs)
     colors: true,
@@ -82,12 +95,12 @@ module.exports = function(config) {
 
     coverageReporter: {
       type : 'html',
-      dir : 'coverage/'
-    },
+      dir : '../coverage/'
+    }
 
     // the default configuration
-    htmlReporter: {
-      outputDir: 'karma_html_Reports/', // where to put the reports 
+    /*htmlReporter: {
+      outputDir: 'C://karma_html_Reports', // where to put the reports 
       templatePath: null, // set if you moved jasmine_template.html
       focusOnFailures: false, // reports show failures on start
       namedFiles: true, // name files instead of creating sub-directories
@@ -99,11 +112,11 @@ module.exports = function(config) {
       // experimental
       preserveDescribeNesting: false, // folded suites stay folded 
       foldAll: true, // reports start folded (only with preserveDescribeNesting)
-    }
+    },*/
 
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true
+    
   });
 };
