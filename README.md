@@ -67,7 +67,7 @@ After the server is running you can use below URL's for testing
 
 
 ## Usage
-<h4> Weather widget component usage</h4>
+<h4> Weather Widget Component Usage</h4>
 <p> Just include assets 'galactus-weather-widget.min.css' and 'galactus-weather-widget-directive.min.js'</p>
 ```html
 <head>
