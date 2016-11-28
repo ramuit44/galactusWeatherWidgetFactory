@@ -1,0 +1,15 @@
+
+[1m   app\app.js[22m
+     32 |[90m         }[39m
+                   ^ Missing semicolon.
+     35 |[90m             for (x in store) {[39m
+                           ^ Creating global 'for' variable. Should be 'for (var x ...'.
+[1m   app\galactus-weather-widget-directive.js[22m
+      1 |[90m'use strict';[39m
+         ^ Use the function form of "use strict".
+     98 |[90m                }, 10000)[39m
+                                  ^ Missing semicolon.
+      3 |[90mvar weatherWidgetModule = angular.module('weatherWidgetModule', []);[39m
+                                   ^ 'angular' is not defined.
+
+[31m>> [39m5 errors in 4 files

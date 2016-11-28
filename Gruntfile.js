@@ -26,7 +26,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>'],
+          'dist/<%= pkg.widgetname %>.min.js':['app/<%= pkg.widgetname %>.js']
         }
       }
     },
@@ -101,19 +102,40 @@ module.exports = function(grunt) {
         }
       }
     },
+    //For now 
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js'],
+      files: ['Gruntfile.js', 'app/*.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
           jQuery: true,
           console: true,
           module: true,
-          document: true
+          document: true,
+          angular   : false
         },
         reporterOutput: ""
       }
     },
+
+    cssmin : {
+      options: {
+            keepSpecialComments: 0
+      },
+      minify : {
+            expand : true,
+            cwd : 'app/styles',
+            src : ['*.css', '!*.min.css'],
+            dest : 'app/styles',
+            ext : '.min.css'
+      },
+      combine : {
+        files: {
+            'app/styles/app.combined.min.css': ['app/styles/galactus-weather-widget-editor.min.css', 'app/styles/galactus-weather-widget.min.css']
+        }
+      }
+    },
+
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint']
@@ -122,10 +144,10 @@ module.exports = function(grunt) {
       options: {
         base:'app/',
         // custom options, see below
-        module:"weather-templates"
+       
       },
       main: {
-        src: ['app/**/*.tpl.html'],
+        src: ['app/**/*.html'],
         dest: 'tmp/templates.js'
       },
     },
@@ -195,6 +217,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('default', ['jshint', 'html2js', 'concat', 'ngAnnotate:dist', 'uglify', 'copy']);
+  grunt.registerTask('default', ['clean','jshint', 'html2js', 'concat', 'ngAnnotate:dist', 'uglify', 'copy', 'cssmin']);
 
 };
