@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reference Usage of Galactus Weather widget</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons.css"/>
+  <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons-wind.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/galactus-weather-widget.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/galactus-weather-widget-editor.css"/>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+  <script type="text/javascript" src="galactus-weather-widget-directive.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="galactus-weather-widget-editor-output-directive.js"></script>
+
+ 
+</head>
+<body ng-app="galactusWeatherApp" ng-controller="weatherWidgetEditorCtrl">
+  <div class="jumbotron">
+    <h1>Galctus Weather Widget Factory</h1> 
+    <p>This is a widget factory to create robust performant weather widgets with Angular and Bootstrap.</p> 
+  </div>
+
+  <div class="inputContainer col-md-4 col-md-offset-4 container">
+  <h2>Create a Widget</h2>
+    <form name="userForm" novalidate>
+      <div class="form-group" show-errors>
+        <label class="control-label">Title</label>
+        <input type="text" class="form-control" name="title" ng-model="widgetForm.title" required placeholder="Title" required/>
+        <div class="help-inline" ng-show="submitted && userForm.title.$error.required">Required</div>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="control-label">Show Wind</label>
+        <div class="control-label" ng-init="widgetForm.showwind='true'" >
+          <label class="radio-inline"><input type="radio" ng-model="widgetForm.showwind" name="showwind" value="true" required>True</label>
+          <label class="radio-inline"><input type="radio" ng-model="widgetForm.showwind" name="showwind" value="false" required>False</label>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="sel1">Unit</label>
+          <select class="form-control" id="sel1" ng-model="widgetForm.units" ng-init="widgetForm.units = 'metric'">
+            <option value="metric">Metric</option>
+            <option value="imperial">Imperial</option>
+          </select>
+      </div>
+      
+      <button class="btn btn-primary" ng-click="save()">Manufacture</button>
+      <button class="btn btn-link" ng-click="reset()">Reset</button>
+      <span class="help-inline" ng-if="duplicate">Duplicate Widget exists.</span>
+
+    </form>
+  </div>
+
+  <div class="col-xs-12">&nbsp;</div>
+  <div class="col-xs-12">&nbsp;</div>
+  <hr class="col-xs-12">
+  <div class="col-xs-12">&nbsp;</div>
+
+  <div class="container">
+    <!--<div ng-repeat="row in widgetConfigs track by row.title">-->
+    <div ng-repeat="row in widgetConfigs">
+      <weather-widget-editor-output units="{{row.units}}"
+          showwind="{{row.showwind}}"
+          title="{{row.title}}">
+      </weather-widget-editor-output>
+
+
+      <hr class="col-xs-12">
+
+    </div>
+  </div>
+
+
+</body>
+</html>
