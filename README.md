@@ -52,7 +52,7 @@ To run the app:
 It will:
 
  * build your assets.
- * run a server to serve your web app static assets on port 9005.
+ * run a server to serve your web app static assets on port 9005 and 'localhost'. Note : If localhost is not supported , either use the system IP Address or DNS name or loopback address(127.0.0.1) as the hostname in the grunt config for connect.
  * have a file watching mechanism to rebuild your assets.
  * live reload support so that your browser is refreshed whenever you make changes to your sources.
 
@@ -60,5 +60,6 @@ It will:
 
 Run `grunt runtests` to run karma tests.
 
-
+###URL's for testing
+The
  
