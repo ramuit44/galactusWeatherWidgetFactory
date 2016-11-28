@@ -61,6 +61,7 @@ It will:
 Run `grunt runtests` to run karma tests.
 
 ###URL's for testing
+After the server is running you can use below URL's for testing
  * For testing the Weather Widget Editor page - http://localhost:9005/
  * For testing the Sample Weather Widget page - http://localhost:9005/sample.html 
 
