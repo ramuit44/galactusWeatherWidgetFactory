@@ -50,7 +50,6 @@ To run the app:
 `grunt run`
 
 It will:
-
  * build your assets.
  * run a server to serve your web app static assets on port 9005 and host 'localhost'. Note : If localhost is not supported , either use the system IP Address or DNS name or loopback address(127.0.0.1) as the hostname in the grunt config for connect.
  * have a file watching mechanism to rebuild your assets.
@@ -61,6 +60,7 @@ It will:
 Run `grunt runtests` to run karma tests.
 
 ###URL's for testing
+
 After the server is running you can use below URL's for testing
  * For testing the Weather Widget Editor page - http://localhost:9005/
  * For testing the Sample Weather Widget page - http://localhost:9005/sample.html 
