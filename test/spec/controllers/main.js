@@ -1,7 +1,7 @@
 
 describe('Service : WeatherService', function () {
 
-  var weatherService, $httpBackend, $q, $scope, $window, $compile, $geolocation, $controller1;
+  var weatherService, $httpBackend, $q, $scope, $window, $compile, $geolocation, $controller1, $filter;
 
   // load the controller's module
   beforeEach(module('galactusWeatherApp','test-templates'));
@@ -65,7 +65,7 @@ describe('Service : WeatherService', function () {
 
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_weatherService_, _$httpBackend_,_$q_,_$rootScope_,_$window_,_$compile_,_$controller_) {
+  beforeEach(inject(function (_weatherService_, _$httpBackend_,_$q_,_$rootScope_,_$window_,_$compile_,_$controller_,_$filter_) {
     weatherService = _weatherService_;
     $httpBackend = _$httpBackend_;
     $q = _$q_;
@@ -74,6 +74,7 @@ describe('Service : WeatherService', function () {
     $geoLocation = $window.navigator.geolocation;
     $compile = _$compile_;
     $controller1 = _$controller_;
+    $filter=_$filter_;
    
   }));
 
@@ -125,14 +126,42 @@ describe('Service : WeatherService', function () {
 
        var element = $compile(html)($scope);
         $scope.$digest();
-        console.log(element.isolateScope());
+        //console.log(element.isolateScope());
        
         $httpBackend.flush();
+
+        expect(element.html()).toContain("imperial");
 
   });
 
 
-   it('test Widget editor controller ', function () {
+
+
+it('test weatherWidgetEditorOutput directive ', function () {
+
+       var html = '<weather-widget-editor-output  units="imperial"  showwind="true" title="rams"> </weather-widget-editor-output>';
+       deferred1= $q.defer();
+       spyOn(weatherService, 'getCurrentPosition').andReturn(deferred1.promise);
+       deferred1.resolve(mockLocationObject);
+       $scope.$apply();
+
+       $httpBackend.whenGET('http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat=33&lon=151&units=imperial&cnt=5').respond(
+        mockWeatherObject
+        );
+
+       var element = $compile(html)($scope);
+        $scope.$digest();
+        //console.log(element.isolateScope());
+       
+        $httpBackend.flush();
+
+        expect(element.html()).toContain("imperial");
+
+  });
+
+
+
+   it('test Widget editor controller reset ', function () {
 
     var $scope = {};
     var controller = $controller1('weatherWidgetEditorCtrl', { $scope: $scope });
@@ -141,6 +170,58 @@ describe('Service : WeatherService', function () {
     $scope.reset();
     expect($scope.submitted).toBe(false);
   });
+
+   it('test Widget editor controller save ', function () {
+
+    var $scope = {};
+    var controller = $controller1('weatherWidgetEditorCtrl', { $scope: $scope });
+    $scope.widgetForm = {"title":"rams","showwind":"true","units":"metric"};
+    $scope.userForm={};
+    $scope.userForm.$invalid = false;
+    $scope.save();
+    expect($scope.widgetConfigs.length).toBe(1);
+  });
+
+
+   it('test Widget editor controller duplicate ', function () {
+
+    var $scope = {};
+    var controller = $controller1('weatherWidgetEditorCtrl', { $scope: $scope });
+    $scope.widgetForm = {"title":"rams","showwind":"true","units":"metric"};
+    $scope.userForm={};
+    $scope.widgetConfigs=[{
+      "title":"rams","showwind":"true","units":"metric"
+    }];
+    $scope.userForm.$invalid = false;
+    $scope.save();
+    expect($scope.widgetConfigs.length).not.toBe(2);
+  });
+
+
+
+   it('test temparature filter ', function () {
+
+    result = $filter('temparature')(28.32, 1);
+    expect(result).toBe('28.3'+ '&deg;');
+  });
+
+
+   it('test getCurrentPosition positive', function () {
+
+      spyOn($window.navigator.geolocation, 'getCurrentPosition').andCallFake(function() {
+      var position = { coords: { latitude: 12.3, longitude: -32.1 } };
+        arguments[0](position);
+      });
+
+       $scope.$digest();
+       weatherService.getCurrentPosition().then(
+        function(result){
+          expect(result.coords.latitude).toBe(12.3); 
+        }
+        );
+
+   });
+
 
 
 

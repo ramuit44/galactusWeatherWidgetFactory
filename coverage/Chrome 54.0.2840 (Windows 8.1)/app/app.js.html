@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">47.83% </span>
+        <span class="strong">95.65% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/23</span>
+        <span class='fraction'>22/23</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">55% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/20</span>
+        <span class='fraction'>20/20</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -99,37 +99,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,14 +152,14 @@
 &nbsp;
  		$scope.widgetConfigs = [];
 &nbsp;
- 		$scope.save = <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" > 			$scope.submitted = true;</span>
+ 		$scope.save = function(){
+ 			$scope.submitted = true;
 &nbsp;
-<span class="cstat-no" title="statement not covered" > 			if($scope.userForm.$invalid){<span class="cstat-no" title="statement not covered" >return;}</span></span>
-<span class="cstat-no" title="statement not covered" > 			if(isDuplicate($scope.widgetForm,$scope.widgetConfigs)) {<span class="cstat-no" title="statement not covered" >$scope.duplicate=true; <span class="cstat-no" title="statement not covered" ></span>return;}</span></span>
+ 			<span class="missing-if-branch" title="if path not taken" >I</span>if($scope.userForm.$invalid){<span class="cstat-no" title="statement not covered" >return;}</span>
+ 			if(isDuplicate($scope.widgetForm,$scope.widgetConfigs)) {$scope.duplicate=true; return;}
 &nbsp;
-<span class="cstat-no" title="statement not covered" > 			$scope.widgetConfigs.push(angular.copy($scope.widgetForm));</span>
-<span class="cstat-no" title="statement not covered" >			$scope.reset();</span>
+ 			$scope.widgetConfigs.push(angular.copy($scope.widgetForm));
+			$scope.reset();
   		};
 &nbsp;
  		$scope.reset = function(){
@@ -168,14 +168,14 @@
  			$scope.widgetForm.title = '';
  		}
 &nbsp;
-<span class="fstat-no" title="function not covered" > 		function isDuplicate(widgetForm,store){</span>
-<span class="cstat-no" title="statement not covered" > 			for (x in store) {</span>
-<span class="cstat-no" title="statement not covered" >    				if (store[x].title == widgetForm.title) {</span>
-<span class="cstat-no" title="statement not covered" >        			return true;</span>
+ 		function isDuplicate(widgetForm,store){
+ 			for (x in store) {
+    				<span class="missing-if-branch" title="else path not taken" >E</span>if (store[x].title == widgetForm.title) {
+        			return true;
     				}
 				}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >				return false;</span>
+				return false;
  		}
 &nbsp;
  		
@@ -187,7 +187,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 28 2016 19:03:54 GMT+1100 (AUS Eastern Daylight Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 28 2016 22:56:28 GMT+1100 (AUS Eastern Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

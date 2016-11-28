@@ -66,11 +66,11 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
-    singleRun: false,
+    browsers: ['PhantomJS'],
+    singleRun: true,
 
-    //browsers: ['Chrome'],
-    //singleRun: false,
+    // browsers: ['Chrome'],
+    // singleRun: true,
 
 
     //'progress','html', 'coverage'

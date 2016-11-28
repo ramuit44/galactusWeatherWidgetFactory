@@ -83,7 +83,7 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
                           maximumAge:Infinity, timeout:0
             }*/
 
-            navigator.geolocation.getCurrentPosition(
+            $window.navigator.geolocation.getCurrentPosition(
                 function (position) {
                     deferred.resolve(position);
                 },
@@ -107,12 +107,12 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
 });
 
 weatherWidgetModule.filter('temparature', function($filter) {
-  return function(input, precision, units) {
+  return function(input, precision) {
     if (!precision) {
         precision = 1;
     }
 
-    var unitDisplay;
+    /*var unitDisplay;
 
     switch (units){
       case "imperial":
@@ -124,7 +124,7 @@ weatherWidgetModule.filter('temparature', function($filter) {
       default:
         unitDisplay = "F"
         break;
-    }
+    } */
 
     var numberFilter = $filter('number');
     //return numberFilter(input, precision) + '&deg;' + unitDisplay;
@@ -157,6 +157,7 @@ weatherWidgetModule.directive('currentWeather', function(weatherService,$compile
     }
   };
 });
+
 
 
 

@@ -20,13 +20,13 @@
                     <weather-icon cloudiness="{{ weather.clouds }}" custom-size="33" >
                     </weather-icon>
                   </div>
-                  <div class="col-xs-4"><span class="align-left tempContent"><span ng-bind-html="weather.temp.current | temparature:1:units"></span></span></div>
+                  <div class="col-xs-4"><span class="align-left tempContent"><span ng-bind-html="weather.temp.current | temparature:1"></span></span></div>
                   <div class="col-xs-4" ng-if="showwind"><span class="align-left windContent">{{weather.windSpeed}} 
                   <span ng-if="(units=='metric')">km/h</span><span ng-if="(units=='imperial')">mph</span>
                   </span></div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4"><span class="align-left subContent"><span ng-bind-html="weather.temp.max | temparature:1:units"></span>/<span ng-bind-html="weather.temp.min | temparature:1:units"></span></span></div>
+                  <div class="col-xs-4"><span class="align-left subContent"><span ng-bind-html="weather.temp.max | temparature:1"></span>/<span ng-bind-html="weather.temp.min | temparature:1"></span></span></div>
                   <div class="col-xs-4"><span class="align-left subContent">Humidity {{weather.humidity}}%</span></div>
                   <div class="col-xs-4" ng-if="showwind">
                       
