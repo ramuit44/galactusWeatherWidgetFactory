@@ -1,6 +1,6 @@
 
 
-var weatherWidgetModule = angular.module('weatherWidgetModule', []);
+var weatherWidgetModule = angular.module('weatherWidgetModule', ["ngSanitize"]);
 
 weatherWidgetModule.service('weatherService', function($http, $filter, $window, $q, $timeout) {
   "use strict";
