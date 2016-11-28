@@ -22,6 +22,11 @@ Editor Factory to create configurable weather widgets. Each Weather widget is bu
 ## Installation instructions / Building & running
 
 ### Pre requisites:
- * Install npm by installing NodeJs
+ * Install npm by installing NodeJs.
  * Install bower using  `npm install -g bower`.
  * Install grunt-cli globally using `npm install -g grunt-cli`.
+
+### Preparing
+ * Run `bower install` to download your web app dependencies described in bower.json to `app/bower_components`.
+ * Run `npm install` once to install the components described in `package.json`, required to run `grunt`.
+
