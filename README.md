@@ -7,4 +7,4 @@ Editor Factory to create configurable weather widgets. Each Weather widget is bu
 * Weather-icons from http://erikflowers.github.io/weather-icons  - for stylign weather widget with weather icons
 * Bower - package manager for the solution , resolving any required library dependencies.
 * Grunt - Task runner tool for building the project and running app on static server and tests on Karma.
-* 
+
