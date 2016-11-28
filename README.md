@@ -9,9 +9,12 @@ Editor Factory to create configurable weather widgets. Each Weather widget is bu
 * Grunt - Task runner tool for building the project and running app on static server and tests on Karma.
 
 ## Code organization
-* This project sources are located in the app directory.
+* This project's sources are located in the app directory.
   * The required libraries are located in the app/bower_components directory.
   * The widget component html templates are located in the app/templates directory .
   * The widget component styles are located in the app/styles directory.
-
+* This project's test sources are in the test directory.
+  * This project's tests code coverage is in coverage directory.
+  * This project's tests result report (grunt-junit-report) is in ./test-results.xml.
+* This project's jshint configuration is in ./.jshintrc and jshint report is in ./jshint-report .  
 
