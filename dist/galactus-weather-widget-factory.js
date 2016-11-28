@@ -46,7 +46,7 @@
 
 }]);;
 
-var weatherWidgetModule = angular.module('weatherWidgetModule', []);
+var weatherWidgetModule = angular.module('weatherWidgetModule', ["ngSanitize"]);
 
 weatherWidgetModule.service('weatherService', ["$http", "$filter", "$window", "$q", "$timeout", function($http, $filter, $window, $q, $timeout) {
   "use strict";
@@ -250,7 +250,8 @@ weatherWidgetModule.directive('windIcon', function() {
     };
 });
 
-;galactusWeatherApp.directive('weatherWidgetEditorOutput', function(){
+;/*! galactus-weather-widget-factory 29-11-2016 */
+var weatherWidgetModule=angular.module("weatherWidgetModule",["ngSanitize"]);weatherWidgetModule.service("weatherService",["$http","$filter","$window","$q","$timeout",function(a,b,c,d,e){"use strict";var f={curWeather:{},getWeather:function(b,c,e){var f=d.defer(),g={latitude:33,longitude:151};e=e||{coords:g};""+e.coords.latitude.toFixed(0)+e.coords.longitude.toFixed(0);return a.get("http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat="+e.coords.latitude+"&lon="+e.coords.longitude+"&units="+b+"&cnt=5").then(function(a){f.resolve(a.data)},function(a){f.reject(a)}),f.promise},populateModalObjectFromResponse:function(a,c){var d=c;return f.curWeather[d]?f.curWeather[d]:(f.curWeather[d]={temp:{},clouds:null},a&&(a.main&&(f.curWeather[d].temp.current=a.main.temp,f.curWeather[d].temp.min=a.main.temp_min,f.curWeather[d].temp.max=a.main.temp_max,f.curWeather[d].humidity=a.main.humidity),a.sys&&(f.curWeather[d].countryCode=a.sys.country),a.wind&&(f.curWeather[d].windSpeed=a.wind.speed,f.curWeather[d].windDeg=a.wind.deg),f.curWeather[d].locationname=a.name,f.curWeather[d].clouds=a.clouds?a.clouds.all:void 0,f.curWeather[d].timestamp=b("date")(new Date,"dd,MMM yy hh:mm a")),f.curWeather[d])},getCurrentPosition:function(){var a=d.defer();if(c.navigator.geolocation){var b={enableHighAccuracy:!0,timeout:5e3,maximumAge:0};c.navigator.geolocation.getCurrentPosition(function(b){a.resolve(b)},function(b){a.reject(b)},b),e(function(){a.reject("Geo Location timed out")},1e4)}else a.reject("Geolocation not supported.");return a.promise}};return f}]),weatherWidgetModule.filter("temparature",["$filter",function(a){return function(b,c){c||(c=1);var d=a("number");return d(b,c)+"&deg;"}}]),weatherWidgetModule.directive("currentWeather",["weatherService","$compile",function(a,b){return{restrict:"E",scope:{units:"@?",title:"@",showwind:"@?"},templateUrl:"templates/weatherWidgetDisplay.html",link:function(b,c,d){b.units=b.units,b.showwind=b.showwind||!0,b.title=b.title||"Sample Date Widget",b.weather={};var e=a.getCurrentPosition().then(a.getWeather.bind(null,b.units,b.showwind));e.then(function(c){b.weather=a.populateModalObjectFromResponse(c,b.title)})}}}]),weatherWidgetModule.directive("weatherIcon",function(){return{restrict:"E",replace:!0,scope:{cloudiness:"@",customSize:"=",useGoogleImages:"="},link:function(a){a.getIconClass=function(){return a.cloudiness<20?"wi wi-day-sunny":a.cloudiness<90?"wi wi-day-cloudy":"wi wi-cloudy"}},template:"<i style='font-size:{{customSize}}px;' ng-class='getIconClass()'></i>"}}),weatherWidgetModule.directive("windIcon",function(){return{restrict:"E",replace:!0,scope:{angle:"@",customSize:"="},link:function(a){a.getWindIconClass=function(){if(a.angle)return"wi wi-wind towards-"+a.angle+"-deg"}},template:"<i style='font-size:{{customSize}}px;' ng-class='getWindIconClass()'></i>"}});;galactusWeatherApp.directive('weatherWidgetEditorOutput', function(){
   return {
     restrict:'E',
     scope: {
@@ -264,7 +265,7 @@ weatherWidgetModule.directive('windIcon', function() {
     }
   };
 });
-;angular.module('templates-main', ['index.html', 'templates/weatherWidgetDisplay.html', 'templates/weatherWidgetEditorOutput.html']);
+;angular.module('templates-main', ['index.html', 'sample.html', 'templates/weatherWidgetDisplay.html', 'templates/weatherWidgetEditorOutput.html']);
 
 angular.module("index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("index.html",
@@ -342,6 +343,32 @@ angular.module("index.html", []).run(["$templateCache", function($templateCache)
     "  </div>\n" +
     "\n" +
     "\n" +
+    "</body>\n" +
+    "</html>");
+}]);
+
+angular.module("sample.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("sample.html",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "  <title>Reference Usage of Galactus Weather widget</title>\n" +
+    "  <link rel=\"stylesheet\" type=\"text/css\" href=\"bower_components/bootstrap/dist/css/bootstrap.css\"/>\n" +
+    "  <link rel=\"stylesheet\" type=\"text/css\" href=\"bower_components/weather-icons/css/weather-icons.css\"/>\n" +
+    "  <link rel=\"stylesheet\" type=\"text/css\" href=\"bower_components/weather-icons/css/weather-icons-wind.css\"/>\n" +
+    "  <link rel=\"stylesheet\" type=\"text/css\" href=\"styles/galactus-weather-widget.min.css\"/>\n" +
+    "  <script type=\"text/javascript\" src=\"bower_components/angular/angular.js\"></script>\n" +
+    "  <script type=\"text/javascript\" src=\"bower_components/angular-sanitize/angular-sanitize.js\"></script>\n" +
+    "  <script type=\"text/javascript\" src=\"bower_components/moment/moment.js\"></script>\n" +
+    "  <script type=\"text/javascript\" src=\"galactus-weather-widget-directive.min.js\"></script>\n" +
+    " </head>\n" +
+    "<body ng-app=\"weatherWidgetModule\">\n" +
+    "	<div class=\"col-md-4 col-md-offset-4 container\">\n" +
+    "		<current-weather units=\"imperial\"\n" +
+    "		          showwind=\"true\"\n" +
+    "		          title=\"A sample Weather widget\">\n" +
+    "		</current-weather>\n" +
+    "	</div>\n" +
     "</body>\n" +
     "</html>");
 }]);

@@ -27,7 +27,8 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>'],
-          'dist/<%= pkg.widgetname %>.min.js':['app/<%= pkg.widgetname %>.js']
+          'dist/<%= pkg.widgetname %>.min.js':['app/<%= pkg.widgetname %>.js'],
+          'app/<%= pkg.widgetname %>.min.js':['app/<%= pkg.widgetname %>.js']
         }
       }
     },
@@ -82,7 +83,8 @@ module.exports = function(grunt) {
           open: true,
           base: [
             '.tmp',
-            '<%= target.app %>'
+            '<%= target.app %>',
+            '.'
           ]
         }
       },
@@ -98,13 +100,13 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          base: '<%= target.dist %>'
+          base: '../<%= target.app %>'
         }
       }
     },
     //For now 
     jshint: {
-      files: ['Gruntfile.js', 'app/*.js'],
+      files: ['Gruntfile.js', 'app/*.js','!app/*.min.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
@@ -179,7 +181,12 @@ module.exports = function(grunt) {
         files:[{
           src:'<%= concat.dist.dest %>',
           expand:true
-        }]
+        },
+        {
+          src:'app/<%= pkg.widgetname %>.js',
+          expand:true
+        }
+        ]
       }
     },
     karma: {
@@ -205,9 +212,7 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:server',
-      //'less:development',
       'concurrent:server',
-      //'autoprefixer',
       'connect:livereload',
       'watch'
     ]);
@@ -217,6 +222,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('default', ['clean','jshint', 'html2js', 'concat', 'ngAnnotate:dist', 'uglify', 'copy', 'cssmin']);
+
+  grunt.registerTask('default', ['clean','jshint', 'html2js', 'ngAnnotate:dist','concat', 'uglify', 'copy', 'cssmin']);
 
 };

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reference Usage of Galactus Weather widget</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons.css"/>
+  <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons-wind.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/galactus-weather-widget.min.css"/>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+  <script type="text/javascript" src="galactus-weather-widget-directive.min.js"></script>
+ </head>
+<body ng-app="weatherWidgetModule">
+	<div class="col-md-4 col-md-offset-4 container">
+		<current-weather units="imperial"
+		          showwind="true"
+		          title="A sample Weather widget">
+		</current-weather>
+	</div>
+</body>
+</html>

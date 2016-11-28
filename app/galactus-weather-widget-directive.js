@@ -2,7 +2,7 @@
 
 var weatherWidgetModule = angular.module('weatherWidgetModule', ["ngSanitize"]);
 
-weatherWidgetModule.service('weatherService', function($http, $filter, $window, $q, $timeout) {
+weatherWidgetModule.service('weatherService', ["$http", "$filter", "$window", "$q", "$timeout", function($http, $filter, $window, $q, $timeout) {
   "use strict";
     var service = {
       curWeather: {},
@@ -105,9 +105,9 @@ weatherWidgetModule.service('weatherService', function($http, $filter, $window, 
 
     };
     return service;
-});
+}]);
 
-weatherWidgetModule.filter('temparature', function($filter) {
+weatherWidgetModule.filter('temparature', ["$filter", function($filter) {
   return function(input, precision) {
     if (!precision) {
         precision = 1;
@@ -131,10 +131,10 @@ weatherWidgetModule.filter('temparature', function($filter) {
     //return numberFilter(input, precision) + '&deg;' + unitDisplay;
     return numberFilter(input, precision) + '&deg;' ;
   };
-});
+}]);
 
 
-weatherWidgetModule.directive('currentWeather', function(weatherService,$compile){
+weatherWidgetModule.directive('currentWeather', ["weatherService", "$compile", function(weatherService,$compile){
   return {
     restrict:'E',
     scope: {
@@ -157,7 +157,7 @@ weatherWidgetModule.directive('currentWeather', function(weatherService,$compile
  
     }
   };
-});
+}]);
 
 
 
