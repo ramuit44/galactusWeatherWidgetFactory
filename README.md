@@ -123,4 +123,10 @@ After the server is running you can use below URL's for testing
 * Ideally the directive file 'galactus-weather-widget-directive' should have been splitted into different directives.js files. filters.js file and service.js file.  Since content is minimal I'm having it in single location. Same with the specs , having all the specs in a single location 'main.js'.
 
 * $window.navigator.geolocation.getCurrentPosition is quite an irritating service. The asynch call doesn't have any timeout its infnite. Had to struggle to get the reponse from it by adding different options to the service call . Thanks to my fellow warriors in stackoverflow.
+
+
+## Feedback About the test. 
+It was fun, but certainly with all the designing, coding , grunt tasks, jshints, testing with code coverage of above 90%, documenting every thing it wasn't a task of 2 hrs in my humble opinion. 
+
+<b>It took around 6hrs to complete my test.</b>
  
