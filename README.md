@@ -104,6 +104,9 @@ After the server is running you can use below URL's for testing
     * In fact, we don’t even categorize callbacks as “success” or “failure.” Instead, they are behaviorally specified. That way, we can chain each behavior in different combinations in order to get the deserved result per save request. 
     * Overall, the readability of the code is greatly improved. And with concise behavioral callbacks, unit testing will be a breeze.   
 
+* Used angular Form validations for performing the userinput validations to the Wiget editor form.
+
+* Used basic bootstrap classes for styling. Other than styling with weather icons, I didn't need the feel to add any furthr styling like fonts , colors , animations for the widget editor and widget itself. Please let me know otherwise, infact I can do rich ux page as well.
 
 
 ## Notes
