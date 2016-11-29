@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Reference Usage of Galactus Weather widget</title>
+  <title>Galactus Weather Widget Editor</title>
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
   <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons.css"/>
   <link rel="stylesheet" type="text/css" href="bower_components/weather-icons/css/weather-icons-wind.css"/>
@@ -16,6 +16,8 @@
 
  
 </head>
+<!-- Tell angular this is the root element of the app and load the module named "galactusWeatherApp"-->
+<!-- invoke the controller weatherWidgetEditorCtrl - create ctr obect with a $scope object.-->
 <body ng-app="galactusWeatherApp" ng-controller="weatherWidgetEditorCtrl">
   <div class="jumbotron">
     <h1>Galctus Weather Widget Factory</h1> 
@@ -60,6 +62,7 @@
   <div class="container">
     <!--<div ng-repeat="row in widgetConfigs track by row.title">-->
     <div ng-repeat="row in widgetConfigs">
+      <!--Invoke the wrapper directive weather-widget-editor-output -->
       <weather-widget-editor-output units="{{row.units}}"
           showwind="{{row.showwind}}"
           title="{{row.title}}">
