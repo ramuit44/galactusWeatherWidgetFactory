@@ -1,7 +1,7 @@
 # galactusWeatherWidgetFactory
 Editor Factory to create configurable weather widgets. Each Weather widget is built using angular directives, feeded using OpenWeatherMap API and styled uising weather-icons.
 
-Browsers(tested) : Chrome - Version 54.0.2840.99 m, FireFox 50.0, IE 11.0.9, Safari 6.2.8
+Browsers(tested) : Chrome - Version 54.0.2840, FireFox 50.0, IE 11.0.9, Safari 6.2.8
 
 ## Libraries used
 * Angular Js - MV* framework for this SPA for building the custom directives(components) "current-weather" and "weather-widget-editor-output".
