@@ -106,7 +106,7 @@ After the server is running you can use below URL's for testing
 
 * Used angular Form validations for performing the userinput validations to the Wiget editor form.
 
-* Used basic bootstrap classes for styling. Other than styling with weather icons, I didn't need the feel to add any furthr styling like fonts , colors , animations for the widget editor and widget itself. Please let me know otherwise, infact I can do rich ux page as well.
+* Used basic bootstrap classes for styling. Other than styling with weather icons, I didn't need the feel to add any further styling like additonal fonts , colors , animations for the widget editor and widget itself. Please let me know otherwise, infact I can do rich UX page as well.
 
 
 ## Notes
