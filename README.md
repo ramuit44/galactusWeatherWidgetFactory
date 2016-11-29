@@ -121,4 +121,6 @@ After the server is running you can use below URL's for testing
 * Since there wasn't much styling, I haven't used any OOCSS styling principles with CSS Preprocessors like SAAS (Let me know if you require that :) - can do that as well) and css in the APP is plain simple css. 
 
 * Ideally the directive file 'galactus-weather-widget-directive' should have been splitted into different directives.js files. filters.js file and service.js file.  Since content is minimal I'm having it in single location. Same with the specs , having all the specs in a single location 'main.js'.
+
+* $window.navigator.geolocation.getCurrentPosition is quite an irritating service. The asynch call doesn't have any timeout its infnite. Had to struggle to get the reponse from it by adding different options to the service call . Thanks to my fellow warriors in stackoverflow.
  
