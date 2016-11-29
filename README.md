@@ -108,7 +108,7 @@ After the server is running you can use below URL's for testing
 
 * Used basic bootstrap classes for styling. Other than styling with weather icons, I didn't need the feel to add any further styling like additonal fonts , colors , animations for the widget editor and widget itself. Please let me know otherwise, infact I can do rich UX page as well.
 
-* Wriiten unit testcase for each and every service methods, directives, filters of the weather widget directive.  Test cases also written for the wrapper directive 'weather-widget-editor-output' and controller methods of the WeatherWidgetEditor. 
+* Written unit testcase for each and every service methods, directives, filters of the weather widget directive.  Test cases also written for the wrapper directive 'weather-widget-editor-output' and controller methods of the WeatherWidgetEditor. 
 <b>The test code coverage is around 93 %</b>
 
 
