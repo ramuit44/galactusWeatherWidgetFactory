@@ -87,7 +87,10 @@ After the server is running you can use below URL's for testing
 </body>      
 ```
 ## Solution Description
-* The idea of a widget is to have a input configurable resuable component which changes its behaviour basing on input parameters. This is exactly what I tried as part of the exercise. I have created a component element called "current-weather" which changes its behaviour(display/functionality) basing on the three different input attributes provided to that element(units, showind,title). I have used angular with its mv* framework to develop these components as angular directives.
+* The idea of a widget is to have a input configurable resuable component which changes its behaviour basing on input parameters. This is exactly what I tried as part of the exercise. I have created a component element called "current-weather" which changes its behaviour(display/functionality) basing on the three different input attributes provided to that element(units, showind,title). I have used angular with its mv* framework to develop this components as angular directives.Each directive has its own template and its own isolated scope/model and functionality within its link function.
+
+* The Widget editor behaviour is driven using the controller object 'weatherWidgetEditorCtrl' and its scope object.  The "current-weather" directive is wrapped around by another directive called "weather-widget-editor-output".  The functionality of the "weather-widget-editor-output" component:
+    * display the current location weather widget (functionality of current-weather) +  display the code snippet on how to include that widget in html.
 
 
 
