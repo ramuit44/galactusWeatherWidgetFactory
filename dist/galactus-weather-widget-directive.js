@@ -98,7 +98,7 @@ weatherWidgetModule.service('weatherService', ["$http", "$filter", "$window", "$
             defer.resolve(response.data);
         }, function(response) {
             //Not much error handling happening here :) 
-            console.error(response);
+            //console.error(response);
             defer.reject(response);
         });
 
@@ -163,14 +163,14 @@ weatherWidgetModule.service('weatherService', ["$http", "$filter", "$window", "$
                 },
                 function (err) {
                     //Not much error handling happening here :) 
-                    console.error(response);
+                   // console.error(response);
                     deferred.reject(err);
                 },
                 options);
 
             //Timeout yourself
             $timeout(function() {
-                    console.error('Geo Location timed out');
+                   // console.error('Geo Location timed out');
                     deferred.reject('Geo Location timed out');
 
                 }, 20000);
