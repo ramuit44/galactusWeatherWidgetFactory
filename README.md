@@ -30,7 +30,7 @@ Browsers(tested) : Chrome - Version 54.0.2840, FireFox 50.0, IE 11.0.9, Safari 6
 
 ### Preparing
  * Run `bower install` to download your web app dependencies described in bower.json to `app/bower_components`.
- * Run `npm install` once to install the components described in `package.json`, required to run `grunt`.
+ * Run `npm install` once to install the components described in `package.json`, required to run `grunt`. This might take a while :)
  
 ### Building
 
