@@ -86,6 +86,11 @@ After the server is running you can use below URL's for testing
     </current-weather>
 </body>      
 ```
+## Solution Description
+* The idea of a widget is to have a input configurable resuable component which changes its behaviour basing on input parameters. This is exactly what I tried as part of the exercise. I have created a component element called "current-weather" which changes its behaviour(display/functionality) basing on the three different input attributes provided to that element(units, showind,title). I have used angular with its mv* framework to develop these components as angular directives.
+
+
+
 ## Notes
 
 * This app used navigator.geolocation for fetchign the current location latitude and longitude. Please make sure the location settings are enabled in Mac for Safari and in IE 11(internet options) for Windows. 
