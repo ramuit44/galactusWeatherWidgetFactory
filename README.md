@@ -116,7 +116,7 @@ After the server is running you can use below URL's for testing
 
 * This app used navigator.geolocation for fetchign the current location latitude and longitude. Please make sure the location settings are enabled in Mac for Safari and in IE 11(internet options) for Windows. 
 
-* For achieving the design pattern of promise chaning , I had to use the `Function.prototype.bind`. But unfortunatley becuase of this,  the corresponding specific test cases when ran with PhantomJS headless browser are failing. This is becuase looks like phanthomJS doesn't support bind ,becuase its built with earlier version of JS engine. I am always ending up with [this](https://github.com/ariya/phantomjs/issues/10522) known phantomjs issue. So suggest to run the karma test cases using either one of the browser(Chrome,ChromeCanary,Firefox,Safari,IE) and not PhantomJS.
+* For achieving the design pattern of promise chaning , I had to use the `Function.prototype.bind`. But unfortunatley becuase of this,  the corresponding specific test cases when ran with PhantomJS headless browser are failing. This is becuase looks like phanthomJS doesn't support bind ,becuase its built with earlier version of JS engine. I was always ending up with <b>[this](https://github.com/ariya/phantomjs/issues/10522)</b> known phantomjs issue. So suggest to run the karma test cases using either one of the browser(Chrome,ChromeCanary,Firefox,Safari,IE) and not PhantomJS.
 
 * Since there wasn't much styling, I haven't used any OOCSS styling principles with CSS Preprocessors like SAAS (Let me know if you require that :) - can do that as well) and css in the APP is plain simple css. 
 
@@ -126,7 +126,7 @@ After the server is running you can use below URL's for testing
 
 
 ## Feedback About the test. 
-It was fun, but certainly with all the designing, coding , grunt tasks, jshints, testing with code coverage of above 90%, documenting every thing it wasn't a task of 2 hrs in my humble opinion. 
+It was fun,  but certainly with all the designing, coding , grunt tasks, jshints, testing with code coverage of above 90%, documenting every thing, I think it wasn't a task of 2 hrs. 
 
 <b>It took around 6hrs to complete my test.</b>
  
