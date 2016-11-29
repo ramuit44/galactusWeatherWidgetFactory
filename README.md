@@ -84,7 +84,6 @@ After the server is running you can use below URL's for testing
     </current-weather>
 </body>      
 ```
-
 ## Solution Description
 * Since there wasn't much styling, I haven't used any OOCSS styling principles with CSS Preprocessors like SAAS (Let me know if you require that :) - can do that as well) and css in the APP is plain simple css. 
  
