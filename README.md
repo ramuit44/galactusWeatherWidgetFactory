@@ -94,6 +94,12 @@ After the server is running you can use below URL's for testing
     
 * The Widget Editor behaviour is driven using the controller object 'weatherWidgetEditorCtrl' and its scope object. The Widget Editor uses "weather-widget-editor-output" component to list out and display the widget created using the Widget Editor form.
 
+* Each Weather widget component using the input parameters makes call to below two asynch operations
+    * navigator.geolocation.getCurrentLocation - for fetching the current long , lat
+    * HTTP GET call to OpenWeatherMap API - for getting the current location weather
+  The requirement is to call  "OpenWeatherMap API" once "navigator.geolocation.getCurrentLocation" is resolved. So for this approch I     took the design pattern of <b>"Promise Chaining"</b>, taking advantage that "then method of a promise returns a new derived promise".
+   
+
 
 
 ## Notes
