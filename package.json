@@ -15,7 +15,8 @@
     "Weather",
     "Widget",
     "Component",
-    "Angular"
+    "Angular",
+    "Galactus"
 ],
   "author": "Sriram P aka Galactus",
   "homepage": "https://github.com/ramuit44/galactusWeatherWidgetFactory",

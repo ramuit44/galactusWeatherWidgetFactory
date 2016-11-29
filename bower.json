@@ -10,7 +10,8 @@
     "angular",
     "angularjs",
     "directive",
-    "weather"
+    "weather",
+    "Galactus"
   ],
   "ignore": [
     "**/.*",

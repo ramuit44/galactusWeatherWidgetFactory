@@ -11,8 +11,12 @@
   <script type="text/javascript" src="bower_components/moment/moment.js"></script>
   <script type="text/javascript" src="galactus-weather-widget-directive.min.js"></script>
  </head>
+
+ <!-- Tell angular this is the root element of the app and load the module named "weatherWidgetModule"-->
 <body ng-app="weatherWidgetModule">
 	<div class="col-md-4 col-md-offset-4 container">
+
+  <!-- call the widget Element directive -->
 		<current-weather units="imperial"
 		          showwind="true"
 		          title="A sample Weather widget">
