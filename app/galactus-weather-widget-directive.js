@@ -92,9 +92,10 @@ weatherWidgetModule.service('weatherService', ["$http", "$filter", "$window", "$
         var location = ''+locationObj.coords.latitude.toFixed(0)+locationObj.coords.longitude.toFixed(0);
 
         
-
+        //AYSNCH HTTP GET call for getting the weather response. 
+        //We have cached this http get call  using param {cache:true}, so that for a given session and for a given same set of input parameter values , the response is fetched from cache rather than making actual HTTP call.
         //Mhhhh . Second thoughts. rather than hard coding the link , the link should have been part of a Global variable  using either angular Constants or Value features.
-        $http.get('http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat='+locationObj.coords.latitude+'&lon='+locationObj.coords.longitude+'&units='+units+'&cnt=5').then(function(response) {
+        $http.get('http://api.openweathermap.org/data/2.5/weather?appid=227b37f61eeafe6959b97149fff86cc2&lat='+locationObj.coords.latitude+'&lon='+locationObj.coords.longitude+'&units='+units+'&cnt=5', { cache: true}).then(function(response) {
             defer.resolve(response.data);
         }, function(response) {
             //Not much error handling happening here :) 
