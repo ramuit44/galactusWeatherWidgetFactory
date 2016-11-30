@@ -108,9 +108,11 @@ After the server is running you can use below URL's for testing
 
 * Used basic bootstrap classes for styling. Other than styling with weather icons, I didn't need the feel to add any further styling like additonal fonts , colors , animations for the widget editor and widget itself. Please let me know otherwise, infact I can do rich UX page as well.
 
-* Written unit testcase for each and every service methods, directives, filters of the weather widget directive.  Test cases also written for the wrapper directive 'weather-widget-editor-output' and controller methods of the WeatherWidgetEditor. 
+* Performance:  Have cached openWeatherMap API $http get call  using param {cache:true}, so that for a given session and for a given same set of input parameter values , the response is fetched from cache rather than making actual HTTP call. This is particularly helpful in improviing performance of the Weather widget editor where mutiple widgets with same input params are created and displayed. 
+
+* Written unit testcase for each and every service methods, directives, filters of the weather widget directive.  Test cases also written for the wrapper directive 'weather-widget-editor-output' and controller methods of the WeatherWidgetEditor. <b>The test code coverage is around 93 %</b>
      * The testcases were written to cover till the http layer of services. Mocked the http responses using the angular httpbackend service. 
-<b>The test code coverage is around 93 %</b>
+
 
 
 ## Notes
